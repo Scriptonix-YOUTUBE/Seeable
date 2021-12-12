@@ -2,11 +2,14 @@
 
 local function doe()
 	for _, v in pairs(workspace:GetChildren()) do
-		if v.Transparency >= 1 then
+		if v:IsA('BasePart') and not v:IsA('Terrain') and v.Transparency >= 1 then
 			v.CanCollide = false
 			if not v:FindFirstChild'better roblox is the best script ever made' then
 				print(string.format('%s was found!',v.Name))
 				local a = Instance.new('SelectionBox',v)
+				a.Adornee = v
+				a.LineThickness = 0.015
+				a.Color3 = Color3.fromRGB(19, 157, 255)
 				a.Name = 'better roblox is the best script ever made'
 			end
 		end

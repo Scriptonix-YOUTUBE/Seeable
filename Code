@@ -1,0 +1,96 @@
+
+
+local function doe()
+	for _, v in pairs(workspace:GetChildren()) do
+		if v.Transparency >= 1 then
+			v.CanCollide = false
+			if not v:FindFirstChild'better roblox is the best script ever made' then
+				print(string.format('%s was found!',v.Name))
+				local a = Instance.new('SelectionBox',v)
+				a.Name = 'better roblox is the best script ever made'
+			end
+		end
+	end
+end
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local yes = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local no = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 2.000
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+Frame_2.Parent = Frame
+Frame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame_2.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+Frame_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame_2.Size = UDim2.new(0, 400, 0, 215)
+
+UICorner.Parent = Frame_2
+
+TextLabel.Parent = Frame_2
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0549999997, 0, 0.0744186044, 0)
+TextLabel.Size = UDim2.new(0, 356, 0, 50)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "Would you like this script  to repeat every 30 seconds ?"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeTransparency = 0.500
+TextLabel.TextWrapped = true
+
+yes.Name = "yes"
+yes.Parent = Frame_2
+yes.BackgroundColor3 = Color3.fromRGB(17, 255, 0)
+yes.Position = UDim2.new(0.0550000072, 0, 0.669767499, 0)
+yes.Size = UDim2.new(0, 155, 0, 50)
+yes.Font = Enum.Font.FredokaOne
+yes.Text = "YES"
+yes.TextColor3 = Color3.fromRGB(255, 255, 255)
+yes.TextSize = 25.000
+yes.TextStrokeTransparency = 0.500
+yes.TextWrapped = true
+
+yes.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+	while wait(30) do
+		doe()
+	end
+end)
+
+UICorner_2.Parent = yes
+
+no.Name = "no"
+no.Parent = Frame_2
+no.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+no.Position = UDim2.new(0.557500005, 0, 0.669767499, 0)
+no.Size = UDim2.new(0, 155, 0, 50)
+no.Font = Enum.Font.FredokaOne
+no.Text = "NO"
+no.TextColor3 = Color3.fromRGB(255, 255, 255)
+no.TextSize = 25.000
+no.TextStrokeTransparency = 0.500
+no.TextWrapped = true
+
+no.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+	doe()
+end)
+
+UICorner_3.Parent = no
